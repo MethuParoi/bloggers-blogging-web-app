@@ -26,7 +26,9 @@ export default function RootLayout({ children }) {
       >
         <div className="min-h-screen flex flex-col justify-between ">
           <Navbar />
-          <div className="xl:max-w-[1250px] container mx-auto">{children}</div>
+          <div className="mx-2 xl:max-w-[1250px] container md:mx-auto">
+            {children}
+          </div>
           <Footer />
         </div>
       </body>
