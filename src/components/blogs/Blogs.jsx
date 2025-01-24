@@ -15,6 +15,14 @@ const Blogs = () => {
     });
   }, []);
 
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center">
+        <p className="text-2xl font-semibold">Loading...</p>
+      </div>
+    );
+  }
+
   return (
     <div className="mb-10">
       <p className=" text-gray-600  text-3xl sm:text-5xl  font-semibold text-center nunitoSans-font border-b-2 border-primary dark:border-gray-600 w-[130px] sm:w-[150px] mx-auto mt-5 mb-10">
@@ -23,11 +31,9 @@ const Blogs = () => {
 
       {/* grid layout */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-10 justify-items-center">
-        {loading ? (
-          <p className="text-center">Loading...</p>
-        ) : (
-          posts.map((post) => <BlogCard blog={post} />)
-        )}
+        {posts.map((post) => (
+          <BlogCard blog={post} />
+        ))}
       </div>
     </div>
   );
