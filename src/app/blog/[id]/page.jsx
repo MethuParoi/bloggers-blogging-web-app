@@ -26,7 +26,7 @@ const Page = () => {
   }
 
   return (
-    <div className="relative md:top-[-80px] ">
+    <div className="relative md:top-[-80px] mt-5 mb-14 md:mb-0 md:mt-0">
       <h1 className="text-3xl font-semibold text-primary">{post.title}</h1>
       <p className="text-gray-600 text-lg my-5">{post.body}</p>
     </div>

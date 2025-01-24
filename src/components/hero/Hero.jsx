@@ -22,8 +22,8 @@ const Hero = () => {
         {/* <SearchSection /> */}
       </div>
       {/* hero slider */}
-      <div className="w-full md:w-1/2">
-        <Image className="rounded-xl w-[350px] sm:w-full" src={img} />
+      <div className="w-full md:w-1/2 flex justify-center items-center">
+        <Image className="rounded-xl w-[350px] sm:w-full " src={img} />
       </div>
     </div>
   );

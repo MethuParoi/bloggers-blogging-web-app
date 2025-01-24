@@ -9,12 +9,7 @@ const ClientNavbar = ({ isUserAuthenticated }) => {
   const router = useRouter();
 
   const handleVisitProfile = () => {
-    if (isUserAuthenticated) {
-      router.push("/profile");
-    }
-    router.push(
-      "https://methuparoisblogs.kinde.com/auth/cx/_:nav&m:login&psid:019496a3939808d72c4f3bd9e18f12da"
-    );
+    router.push("/profile");
   };
 
   return (
@@ -45,8 +40,12 @@ const ClientNavbar = ({ isUserAuthenticated }) => {
               <Link href="/">Home</Link>
             </li>
 
-            <li onClick={() => handleVisitProfile()} role="button">
-              Profile
+            <li>
+              {isUserAuthenticated ? (
+                <button onClick={() => handleVisitProfile()}>Profile</button>
+              ) : (
+                <LoginLink>Profile</LoginLink>
+              )}
             </li>
           </ul>
         </div>
@@ -58,8 +57,12 @@ const ClientNavbar = ({ isUserAuthenticated }) => {
             <Link href="/">Home</Link>
           </li>
 
-          <li onClick={() => handleVisitProfile()} role="button">
-            Profile
+          <li>
+            {isUserAuthenticated ? (
+              <button onClick={() => handleVisitProfile()}>Profile</button>
+            ) : (
+              <LoginLink>Profile</LoginLink>
+            )}
           </li>
         </ul>
       </div>
